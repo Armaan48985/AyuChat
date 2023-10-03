@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/AyuChat/static/css/main.167d6439.css",
+    "main.js": "/AyuChat/static/js/main.af570928.js",
+    "static/js/787.3f500a87.chunk.js": "/AyuChat/static/js/787.3f500a87.chunk.js",
+    "static/media/logo1.jpg": "/AyuChat/static/media/logo1.8ab5b5a64a6b025ba4bf.jpg",
+    "static/media/backgroundLogo.png": "/AyuChat/static/media/backgroundLogo.3f8301aaaabc5618baad.png",
+    "static/media/logo.svg": "/AyuChat/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/AyuChat/index.html",
+    "main.167d6439.css.map": "/AyuChat/static/css/main.167d6439.css.map",
+    "main.af570928.js.map": "/AyuChat/static/js/main.af570928.js.map",
+    "787.3f500a87.chunk.js.map": "/AyuChat/static/js/787.3f500a87.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.167d6439.css",
+    "static/js/main.af570928.js"
+  ]
+}
