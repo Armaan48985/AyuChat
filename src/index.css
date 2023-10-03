@@ -1,13 +1,311 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  border-radius: 0px;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+}
+
+.sidebar {
+  width: 240px;
+  height: 45%;
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  display: none;
+  position: absolute;
+  top: 10rem;
+  left: 6.7rem;
+  z-index: 999;
+}
+
+.history-box{
+  position: absolute;
+  top: 6rem;
+  left: 14rem;
+  width: 300px;
+  height: 500px;
+  background-color: rgb(66, 66, 66);
+  display: none;
+  border-radius: 8px;
+}
+
+.history-message{
+  color: white;
+  font-size: 1.1rem;
+}
+
+.logoImg{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2rem;
+  left: 46%;
+  box-shadow: 1px 1px 2px grey;
+}
+
+.show{
+  display: block;
+}
+
+.sidebar-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: .7;
+}
+
+.menu-icon{
+  background-color: rgb(35, 35, 46);
+  color: white;
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  top: 10px;
+  left: -55px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.help-icon{
+  /* background-color: rgb(35, 35, 46); */
+  color: white;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  border: 2px solid white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.box {
+  border: 1px solid #555;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+  color: black;
+}
+
+.box:hover {
+  background-color: #13142a;
+  color: white;
+}
+
+.chat-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  margin: 100px auto 80px auto;
+  border-radius: 15px;
+  position: relative;
+  transition: .3s;
+}
+
+
+.chat-header {
+  background-color: #13142a;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-header h2{
+  font-family: 'Stylish', sans-serif;
+ cursor: pointer;
+}
+
+.backgroundLogo{
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  opacity: .3;
+}
+
+.dropdown-menu {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-messages {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  z-index: 999;
+  margin-top: 40px; /* Add spacing between chat messages */
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.message {
+  border-radius: 15px;
+  padding: 10px 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+  margin-bottom: 15px; /* Add spacing between messages */
+}
+
+.user-message {
+  background-color: #41ad46;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #27344a;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.user-input-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  /* border-top: 2px solid #ccc; */
+  box-shadow: 1px 1px 2px rgb(70, 70, 70);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.user-input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  background-color: rgb(215, 225, 247);
+  font-weight: 500;
+  font-family: 'Karla', sans-serif;
+}
+
+.send-button {
+  background-color: #13142a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #414253;
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar, .chat-container {
+      width: 100%;
+      border-radius: 0;
+  }
+
+  .box {
+      width: 100%;
+  }
+
+  .dropdown-menu {
+      display: block;
+      margin-top: 10px;
+  }
+}
+
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the pop-up is on top */
+  transition: 3s;
+}
+
+.popup {
+  background: white;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: 3s;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* CSS for the overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1; /* Ensure the overlay is below the pop-up */
 }
